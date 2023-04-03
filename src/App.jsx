@@ -1,10 +1,11 @@
 import React from "react";
+import { Header } from "./components/Header/Header";
 
 const App = () => {
   return (
-    <div className="flex h-[100vh] items-center justify-center bg-white text-black">
-      hi
-    </div>
+    <>
+      <Header />
+    </>
   );
 };
 
