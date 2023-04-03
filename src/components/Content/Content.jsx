@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 import { Container } from "../Container";
+import { Loader } from "../Loader";
 import { ContentItem } from "./ContentItem";
 
 export const Content = () => {
@@ -55,11 +56,7 @@ export const Content = () => {
             <ContentItem image={item.src} alt={item.alt} />
           ))}
         </Masonry>
-        {loading && (
-          <h4 className="fixed left-0 top-0  text-center text-[100px] font-bold">
-            Loading...
-          </h4>
-        )}
+        {loading && <Loader />}
       </Container>
     </main>
   );
