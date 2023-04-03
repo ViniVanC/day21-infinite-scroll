@@ -17,13 +17,13 @@ export const Header = () => {
   const [user] = useState([
     {
       id: v4(),
-      name: "User",
+      name: "Vincent Van",
       srcUserImg: "/images/img2.png",
       active: true,
     },
     {
       id: v4(),
-      name: "User1",
+      name: "Jane Ohara",
       srcUserImg: "/images/img4.jpg",
       active: false,
     },
