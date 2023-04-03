@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Logo = ({ size = 40, color = "#2e3c45" }) => {
+export const Logo = ({ size = 60, color = "#2e3c45" }) => {
   return (
     <div
       className="inline-block leading-[0]"
