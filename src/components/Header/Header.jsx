@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../Container";
 import { Logo } from "./Logo";
 import { FaBell } from "react-icons/fa";
 import { MessagesList } from "./MessagesList";
 import { v4 } from "uuid";
 import { ParametersList } from "./ParametersList";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export const Header = () => {
   const [messages] = useState([
@@ -29,12 +30,13 @@ export const Header = () => {
   ]);
   const [isOpenMessagesWindow, setIsOpenMessagesWindow] = useState(false);
   const [isOpenParametersWindow, setIsOpenParametersWindow] = useState(false);
+  const isAbove768Screens = useMediaQuery("(max-width:768px)");
 
   return (
-    <header className="bg-white">
+    <header className="fixed left-0 top-0 z-50 w-full bg-white">
       <Container>
         <div className="relative flex items-center justify-between py-[10px] max-sm:py-[5px]">
-          <Logo />
+          <Logo size={isAbove768Screens ? 45 : 60} />
           <div className="flex items-center gap-[20px]">
             <div className="relative">
               {messages ? (

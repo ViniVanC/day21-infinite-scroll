@@ -44,7 +44,7 @@ export const Content = () => {
   };
 
   return (
-    <main>
+    <main className="mt-[90px] max-sm:mt-[60px]">
       <Container>
         <Masonry
           breakpointCols={breakpointColumnsObj}
