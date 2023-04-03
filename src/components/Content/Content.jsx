@@ -51,8 +51,8 @@ export const Content = () => {
           className="gallery-grid"
           columnClassName="gallery-grid_column"
         >
-          {images.map((item) => (
-            <ContentItem image={item.src} alt={item.alt} />
+          {images.map((item, i) => (
+            <ContentItem key={i} image={item.src} alt={item.alt} />
           ))}
         </Masonry>
         {loading && <Loader />}
