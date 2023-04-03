@@ -13,6 +13,20 @@ export const Header = () => {
       text: "Привіт, це сайт де я спробував реалізувати нескінченну прокрутку сторінки",
     },
   ]);
+  const [user] = useState([
+    {
+      id: v4(),
+      name: "User",
+      srcUserImg: "/images/img2.png",
+      active: true,
+    },
+    {
+      id: v4(),
+      name: "User1",
+      srcUserImg: "/images/img4.jpg",
+      active: false,
+    },
+  ]);
   const [isOpenMessagesWindow, setIsOpenMessagesWindow] = useState(false);
   const [isOpenParametersWindow, setIsOpenParametersWindow] = useState(false);
 
@@ -40,7 +54,7 @@ export const Header = () => {
             <div className="relative flex items-center gap-[10px]">
               <img
                 className="h-[40px] w-[40px] cursor-pointer overflow-hidden rounded-full border-[2px] border-solid border-black object-cover"
-                src="/images/img2.png"
+                src={user[0].srcUserImg}
                 alt="user-img"
               />
               <div
@@ -50,7 +64,7 @@ export const Header = () => {
                   setIsOpenMessagesWindow(false);
                 }}
               />
-              {isOpenParametersWindow && <ParametersList />}
+              {isOpenParametersWindow && <ParametersList userInfo={user} />}
             </div>
           </div>
         </div>
