@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --white: #d6c4b8;
+  --lightOrange: #e69077;
+  --orange: #da4348;
+  --darkRed: #8b3e50;
+  --black: #2e3c45;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--white);
+  color: var(--black);
+
+  main {
+    flex: 1 1 auto;
+  }
+}
