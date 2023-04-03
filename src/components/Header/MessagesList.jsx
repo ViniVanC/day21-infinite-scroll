@@ -3,7 +3,7 @@ import React from "react";
 export const MessagesList = ({ messages }) => {
   return (
     <div
-      className="absolute -right-[20px] mt-[10px] min-w-[300px] rounded-2xl bg-black py-[10px] text-white"
+      className="absolute right-0 top-[100%] mt-[10px] min-w-[300px] max-w-[450px] rounded-2xl bg-black py-[10px] text-white"
       style={{
         boxShadow: "rgba(46, 60, 69, .3) 0px 10px 15px",
       }}

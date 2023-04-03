@@ -33,7 +33,7 @@ export const Header = () => {
   return (
     <header className="bg-white">
       <Container>
-        <div className="flex items-center justify-between py-[10px] max-sm:py-[5px]">
+        <div className="relative flex items-center justify-between py-[10px] max-sm:py-[5px]">
           <Logo />
           <div className="flex items-center gap-[20px]">
             <div className="relative">
@@ -43,15 +43,15 @@ export const Header = () => {
                 </span>
               ) : null}
               <FaBell
-                className="cursor-pointer text-[25px]"
+                className="cursor-pointer text-[30px]"
                 onClick={() => {
                   setIsOpenMessagesWindow(!isOpenMessagesWindow);
                   setIsOpenParametersWindow(false);
                 }}
               />
-              {isOpenMessagesWindow && <MessagesList messages={messages} />}
             </div>
-            <div className="relative flex items-center gap-[10px]">
+            {isOpenMessagesWindow && <MessagesList messages={messages} />}
+            <div className="flex items-center gap-[10px]">
               <img
                 className="h-[40px] w-[40px] cursor-pointer overflow-hidden rounded-full border-[2px] border-solid border-black object-cover"
                 src={user[0].srcUserImg}
@@ -64,8 +64,8 @@ export const Header = () => {
                   setIsOpenMessagesWindow(false);
                 }}
               />
-              {isOpenParametersWindow && <ParametersList userInfo={user} />}
             </div>
+            {isOpenParametersWindow && <ParametersList userInfo={user} />}
           </div>
         </div>
       </Container>
