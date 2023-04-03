@@ -1,35 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "../Container";
 import { Logo } from "./Logo";
 import { FaBell } from "react-icons/fa";
 import { MessagesList } from "./MessagesList";
-import { v4 } from "uuid";
 import { ParametersList } from "./ParametersList";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { useDb } from "../../hooks/useDb";
 
 export const Header = () => {
-  const [messages] = useState([
-    {
-      id: v4(),
-      text: "Привіт, це сайт де я спробував реалізувати нескінченну прокрутку сторінки",
-    },
-  ]);
-  const [user] = useState([
-    {
-      id: v4(),
-      name: "Vincent Van",
-      srcUserImg: "/images/img2.png",
-      active: true,
-    },
-    {
-      id: v4(),
-      name: "Jane Ohara",
-      srcUserImg: "/images/img4.jpg",
-      active: false,
-    },
-  ]);
-  const [isOpenMessagesWindow, setIsOpenMessagesWindow] = useState(false);
-  const [isOpenParametersWindow, setIsOpenParametersWindow] = useState(false);
+  const {
+    messages,
+    user,
+    isOpenMessagesWindow,
+    setIsOpenMessagesWindow,
+    isOpenParametersWindow,
+    setIsOpenParametersWindow,
+  } = useDb();
   const isAbove768Screens = useMediaQuery("(max-width:768px)");
 
   return (
